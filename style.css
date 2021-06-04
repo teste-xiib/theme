@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700");
+:root, :root[data-theme=light] {
+  --light: #fff;
+  --text-on-light: #000;
+  --light-background: var(--light);
+  --dark: #333;
+  --dark-background: var(--dark);
+  --text-on-dark: #fff;
+  /* Theme Colors */
+  --pink: 336;
+  --darker-pink: hsl(var(--pink), 75%, 23%);
+  --pink-background: hsl(var(--pink), 75%, 35%);
+  --text-on-pink: #fff;
+  --blue: 207;
+  --darker-blue: hsl(var(--blue), 86%, 41%);
+  --blue-background: hsl(var(--blue), 86%, 51%);
+  --text-on-blue: #fff;
+  --yellow: 52;
+  --darker-yellow: hsl(var(--yellow), 98%, 58%);
+  --yellow-background: hsl(var(--yellow), 98%, 68%);
+  --text-on-yellow: #000;
+  /* default styles */
+  --bg-color: var(--light-background);
+  --text-color: var(--text-on-light);
+}
+
+:root[data-theme=pink] {
+  --bg-color: var(--pink-background);
+  --text-color: var(--text-on-pink);
+}
+
+:root[data-theme=blue] {
+  --bg-color: var(--blue-background);
+  --text-color: var(--text-on-blue);
+}
+
+:root[data-theme=dark] {
+  --bg-color: var(--dark-background);
+  --text-color: var(--text-on-dark);
+}
+
+:root[data-theme=yellow] {
+  --bg-color: var(--yellow-background);
+  --text-color: var(--text-on-yellow);
+}
+
+body {
+  padding: 5vw 10vw;
+  font-size: calc(14px + 1vw);
+  line-height: 1, 6;
+  font-family: "Nunito", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.sr-only {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.theme-switcher .input-wrapper {
+  position: relative;
+  width: 1.6em;
+  height: 1.6em;
+  display: inline-block;
+  margin: 1em 1.5em 1em 0;
+  border-radius: 50%;
+}
+
+.theme-switcher label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+.theme-switcher label[data-color=light] {
+  background-color: var(--light-background);
+}
+.theme-switcher label[data-color=pink] {
+  background-color: var(--pink-background);
+}
+.theme-switcher label[data-color=blue] {
+  background-color: var(--blue-background);
+}
+.theme-switcher label[data-color=dark] {
+  background-color: var(--dark-background);
+}
+.theme-switcher label[data-color=yellow] {
+  background-color: var(--yellow-background);
+}
+
+.theme-switcher input[type=radio] {
+  opacity: 0;
+  position: absolute;
+}
+.theme-switcher input[type=radio]:checked + label {
+  border: 1px solid #111;
+  transform: scale(1.25);
+}
+.theme-switcher input[type=radio]:focus + label {
+  transform: scale(1.25);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
